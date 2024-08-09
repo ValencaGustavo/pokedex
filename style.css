@@ -1,0 +1,88 @@
+html {
+    background-color: var(--orange);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+}
+
+:root {
+    --preto: rgb(0, 0, 0);
+    --branco: #ffffff; 
+    --dark-gray: #454545; 
+    --roxo: #29012e;
+    --orange: #F44E00;
+    --dark-red: #8B0000; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgb(5, 1, 65);
+    color: var(--branco);
+    padding: 3rem 4rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6);
+}
+
+#inputNumero {
+    border-radius: 12%;
+}
+
+.container input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--preto);
+    color: var(--dark-red);
+    outline: none;
+    padding: .4rem;
+}
+
+.container input::placeholder {
+    color: var(--branco);
+    text-align: center;
+}
+
+.container input:focus {
+    border-bottom: 2px solid var(--preto);
+}
+
+button {
+    padding: .8rem;
+    width: 80%;
+    font-size: 1rem;
+    background-color: var(--orange);
+    border: none; 
+    border-radius: 1rem;
+    color: var(--branco);
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: background-color .4s; 
+}
+
+button:hover {
+    background-color: #ad3f0b;
+}
+
+#logoitau, #img {
+    display: flex;
+    width: 150px;
+    height: 120px;
+    position: absolute; 
+}
+
+#logoitau {
+    margin-left: -420px;
+    margin-top: -150px;
+}
+
+#img {
+    margin-left: 500px;
+    margin-top: -4px;
+    height: 30rem;
+    width: 30rem;
+}
