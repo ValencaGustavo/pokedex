@@ -1,32 +1,30 @@
-var randomnumber = 0;
-var tentativas = 0;
+function buscar() {
+    var entrada = document.getElementById('entrada').value.toLowerCase();
 
-function checkrandom() {
-    var elemento = document.getElementById('inputNumero').value
+    var url = "https://pokeapi.co/api/v2/pokemon/" + entrada;
 
-    elemento = ''
-
-    randomnumber = parseInt(Math.random() * 101)
-
-    console.log('Número: ' + randomnumber);
-}
-
-checkrandom();
-
-function verifynumber() {
-    var numero = document.getElementById('inputNumero').value
-
-    if(numero > 100 || numero < 0) {
-        alert('Aposta inválida.')
-        return;
-
-    } if (numero > randomnumber) {
-        tentativas++;
-        alert('O numero a ser encontrado é MENOR!')
-    } else if (numero < randomnumber) {
-        tentativas++;
-        alert('O número a ser encontrado é MAIOR!')
-    } else {
-        alert(`Parabéns, você acertou em ${tentativas} tentativas!`)
+    var contador = 0
+    if(entrada.length < 1) {
+        entrada = contador
     }
+
+    fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        var tela = document.getElementById('tela');
+        
+        tela.innerHTML =
+        '<h2>' + data.name + '</h2>' +
+        '<img class="pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/' + data.id + '.gif" > ' +
+        '<img class="pokemon" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/back/' + data.id + '.gif" > <br> <br>' +
+        '<p> Id: ' + data.id + '</p>' +
+        '<p> Tipo: ' + data.types.map(type => type.type.name).join(', ') + '</p>' +
+        '<p> Habilidades: ' + data.abilities.map(ability => ability.ability.name).join(', ') + '</p>';
+
+        document.getElementById('entrada').value = '';
+    })
+    .catch(erro => {
+        var tela = document.getElementById('tela');
+        tela.innerHTML = '<p> Pokemon não encontrado, erro: ' + erro + '</p>';
+    });
 }

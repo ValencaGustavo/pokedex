@@ -1,88 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 html {
-    background-color: var(--orange);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-image: url("./img/pinwheel-forest-pokemon-pixel-thumb.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
-    margin: 0; 
 }
 
-:root {
-    --preto: rgb(0, 0, 0);
-    --branco: #ffffff; 
-    --dark-gray: #454545; 
-    --roxo: #29012e;
-    --orange: #F44E00;
-    --dark-red: #8B0000; 
+#h1_1 {
+    margin: 10px;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    background-color: rgb(5, 1, 65);
-    color: var(--branco);
-    padding: 3rem 4rem;
+.painel {
+    background-color: tomato;
+    border: 5px solid brown;
+    height: 500px;
+    width: 400px;
     border-radius: 1rem;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.6);
-}
-
-#inputNumero {
-    border-radius: 12%;
-}
-
-.container input {
-    background-color: transparent;
-    border: none;
-    border-bottom: 2px solid var(--preto);
-    color: var(--dark-red);
-    outline: none;
-    padding: .4rem;
-}
-
-.container input::placeholder {
-    color: var(--branco);
     text-align: center;
+    color: white;
+    margin: auto;
+    margin-left: 900px;
+    margin-top: 30px;
+    box-shadow: 3px 3px 15px black;
 }
 
-.container input:focus {
-    border-bottom: 2px solid var(--preto);
+.frontal {
+    width: 45%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+#pokebola {
+    width: 45px;
+    height: 45px;
+}
+
+#tela {
+    margin: auto;
+    background-color: lightcoral;
+    background-image: url("img/7980451.jpg");
+    background-size: cover;
+    border: 5px solid brown;
+    width: 300px;
+    height: 285px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    animation: carregar 5s alternate;
+}
+
+@keyframes carregar {
+    0% {
+        height: 0;
+    }
+    100% { }
+}
+
+p {
+    margin: auto;
+}
+
+h2 {
+    margin: 40px auto;
+    border-radius: 1rem;
+}
+
+#entrada {
+    height: 30px;
+    text-align: center;
+    border-radius: 10px;
+    width: 200px;
+}
+
+#input_pokedex {
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px black;
 }
 
 button {
-    padding: .8rem;
-    width: 80%;
-    font-size: 1rem;
-    background-color: var(--orange);
-    border: none; 
-    border-radius: 1rem;
-    color: var(--branco);
-    margin-top: 2rem;
-    cursor: pointer;
-    transition: background-color .4s; 
+    height: 35px;
+    margin: 7px;
+    background-color: #202020;
+    color: #fff;
+    border: 3px solid gray;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px black;
+    width: 80px;
+}
+
+.rodape {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    justify-content: center;
 }
 
 button:hover {
-    background-color: #ad3f0b;
-}
-
-#logoitau, #img {
-    display: flex;
-    width: 150px;
-    height: 120px;
-    position: absolute; 
-}
-
-#logoitau {
-    margin-left: -420px;
-    margin-top: -150px;
-}
-
-#img {
-    margin-left: 500px;
-    margin-top: -4px;
-    height: 30rem;
-    width: 30rem;
+    background-color: black;  
+    cursor: pointer;  
+    margin-top: 1rem;
+    box-shadow: 1px 1px 5px #202020;
 }
